@@ -12,7 +12,6 @@ export default function DashboardLayout({
           <h2 className="text-xl font-bold text-indigo-600">Admin Console</h2>
           <nav className="space-x-6 text-sm font-medium text-gray-600">
             <a href="/dashboard" className="hover:text-indigo-600 transition">Overview</a>
-            <a href="/dashboard/settings" className="hover:text-indigo-600 transition">Settings</a>
           </nav>
         </div>
       </header>

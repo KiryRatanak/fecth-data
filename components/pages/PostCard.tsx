@@ -1,11 +1,11 @@
-import { PostResponce } from "../../lib/posts"
+import { PostResponce } from "../../app/lib/posts"
 export default function PostCard({
     userId = 0,
     id = 0,
     title = "default",
     body = "default"
-}: PostResponce){
-    return(
+}: PostResponce) {
+    return (
         <>
             <h2 className="line-clamp-3 bg-purple-">Title : {title}</h2>
             <p className="line-clamp-3 bg-purple-">Description : {body}</p>

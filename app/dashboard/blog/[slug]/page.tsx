@@ -1,17 +1,6 @@
-import PostCard from "@/components/pages/PostCard";
+import { fetchDetailPost } from "@/components/data/fecthPost";
+import PostCard from "@/components/PostCard";
 import Link from "next/link";
-
-const BASE_API = process.env.NEXT_PUBLIC_API_URL || 'jsonplaceholder.typicode.com';
-
-async function fetchDetailPost(id: string) {
-    const res = await fetch(`${BASE_API}posts/${id}`);
-
-    if (!res.ok) {
-        throw new Error(`Failed to fetch post with ID: ${id}`);
-    }
-
-    return res.json();
-}
 
 export default async function Blog({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = await params;

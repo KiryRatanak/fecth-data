@@ -1,20 +1,11 @@
 import Link from "next/link";
-import PostCard from "../../components/pages/PostCard";
-import { PostResponce } from "../lib/posts";
-
-const BASE_API = 'https://jsonplaceholder.typicode.com/';
+import PostCard from "../../components/PostCard";
+import { loadPost } from "@/components/data/fecthPost";
 
 export default async function Dashboard() {
-    const res = await fetch(`${BASE_API}posts`);
-
-    if (!res.ok) {
-        throw new Error('Failed to fetch dashboard data');
-    }
-
-    const posts: PostResponce[] = await res.json();
-
+    const posts = await loadPost()
     return (
-        <div className="space-y-8">
+        <div className="space-y-8 m-6">
             <header className="border-l-4 border-indigo-500 pl-4">
                 <h1 className="text-4xl font-extrabold text-gray-900 tracking-tight">
                     Welcome to Dashboard
